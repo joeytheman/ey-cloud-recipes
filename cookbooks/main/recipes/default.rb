@@ -73,7 +73,7 @@ require_recipe "resque"
 #require_recipe "newrelic_server_monitoring"
 
 #enable contrib modules for a given Postgresql9 database
-#if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
+if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # postgresql9_autoexplain "dbname"
   # postgresql9_chkpass "dbname"
   # postgresql9_citext "dbname"
@@ -90,7 +90,7 @@ require_recipe "resque"
   # postgresql9_pg_trgm "postgres_test"  
   # postgresql9_pgcrypto "postgres_test"
   # postgresql9_pgrowlocks "dbname"
-  # postgresql9_postgis "dbname" 
+   postgresql9_postgis "gimmiesportsweb" 
   # postgresql9_seg "dbname"
   # postgresql9_tablefunc "dbname"
   # postgresql9_unaccent "dbname"
@@ -100,4 +100,4 @@ require_recipe "resque"
   # postgresql9_pg_buffercache "postgres"
   # postgresql9_pg_freespacemap "postgres"
   
-#end
+end
