@@ -3,6 +3,6 @@
 # Recipe:: default
 #
 execute "switch to postgis adapter" do
-  command "echo 'adapter:   postgis' >> /data/gimmiesportsweb/shared/config/database.yml"
+  command "echo ' adapter:   postgis' >> /data/gimmiesportsweb/shared/config/database.yml"
   user "root"
 end
