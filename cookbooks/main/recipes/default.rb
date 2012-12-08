@@ -5,7 +5,7 @@
 #end
 
 require_recipe "postgis_adapter"
-
+require_recipe "whenever"
 # uncomment to turn on thinking sphinx/ultra sphinx. Remember to edit cookbooks/sphinx/recipes/default.rb first!
  require_recipe "sphinx"
 
