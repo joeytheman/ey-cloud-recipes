@@ -9,6 +9,9 @@ require_recipe "postgis_adapter"
 # uncomment to turn on thinking sphinx/ultra sphinx. Remember to edit cookbooks/sphinx/recipes/default.rb first!
  require_recipe "sphinx"
 
+# uncomment to use the collectd recipe. See cookbooks/collectd/readme.md for documentation.
+# require_recipe "collectd"
+
 #uncomment to turn on memcached
  require_recipe "memcached"
 
@@ -37,16 +40,22 @@ require_recipe "postgis_adapter"
 
 #uncomment to run the exim::auth recipe
 #require_recipe "exim::auth"
-#require_recipe "mongodb"
+require_recipe "mongodb"
 
 #uncomment to run the resque recipe
 require_recipe "resque"
+
+#uncomment to run redis.yml recipe
+# require_recipe "redis-yml"
 
 #uncomment to run the resque-scheduler recipe
 # require_recipe "resque-scheduler"
 
 #uncomment to run the redis recipe
 #require_recipe "redis"
+
+#uncomment to run the api-keys-yml recipe
+# require_recipe "api-keys-yml"
 
 #require_recipe "logrotate"
 #
@@ -80,6 +89,9 @@ require_recipe "resque"
 
 #uncomment to include the newrelic_server_monitoring recipe
 #require_recipe "newrelic_server_monitoring"
+
+# uncomment to include the PHP recipe
+# require_recipe "php"
 
 #enable Extension modules for a given Postgresql database
 if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
