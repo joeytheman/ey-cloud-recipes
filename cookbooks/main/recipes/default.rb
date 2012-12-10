@@ -6,8 +6,6 @@
 
 require_recipe "postgis_adapter"
 require_recipe "whenever"
-# uncomment to turn on thinking sphinx/ultra sphinx. Remember to edit cookbooks/sphinx/recipes/default.rb first!
- require_recipe "sphinx"
 
 # uncomment to use the collectd recipe. See cookbooks/collectd/readme.md for documentation.
 # require_recipe "collectd"
@@ -134,3 +132,7 @@ if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # postgresql9_pg_stat_statements "todo" - Not done
  
 end
+
+# uncomment to turn on thinking sphinx/ultra sphinx. Remember to edit cookbooks/sphinx/recipes/default.rb first!
+ require_recipe "sphinx"
+
