@@ -38,7 +38,7 @@ require_recipe "whenever"
 
 #uncomment to run the exim::auth recipe
 #require_recipe "exim::auth"
-require_recipe "mongodb"
+#require_recipe "mongodb"
 
 #uncomment to run the resque recipe
 require_recipe "resque"
@@ -93,7 +93,7 @@ require_recipe "resque"
 
 #enable Extension modules for a given Postgresql database
 if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
-  # Extensions that support both Postgres 9.0 and 9.1
+  # Extensions that support both Postgres 9.0, 9.1 and 9.2
   # postgresql9_autoexplain "dbname"
   # postgresql9_btree_gin "dbname"
   # postgresql9_btree_gist "dbname"
@@ -110,7 +110,7 @@ if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # postgresql9_isn "dbname"
   # postgresql9_lo "dbname"
   # postgresql9_ltree "dbname"
-  # postgresql9_pg_trgm "dbname"  
+  # postgresql9_pg_trgm "dbname"
   # postgresql9_pgcrypto "dbname"
   # postgresql9_pgrowlocks "dbname"
    postgresql9_postgis "gimmiesportsweb" 
@@ -120,12 +120,15 @@ if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # postgresql9_test_parser "dbname"
   # postgresql9_unaccent "dbname"
   # postgresql9_uuid_ossp "dbname"
-  
-  
-  # 9.1 Extensions
-  # postgresql9_file_fdw "dbname" 
+
+
+  # 9.1 and 9.2 Extensions
+  # postgresql9_file_fdw "dbname"
   # postgresql9_xml2 "dbname"
-  
+
+  # 9.2 Extensions
+  # postgresql9_pg_stat_statements "dbname"
+
   #Admin-Level Contribs
   # postgresql9_pg_buffercache "postgres"
   # postgresql9_pg_freespacemap "postgres"
