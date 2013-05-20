@@ -10,6 +10,12 @@ require_recipe "whenever"
 # uncomment to use the collectd recipe. See cookbooks/collectd/readme.md for documentation.
 # require_recipe "collectd"
 
+# uncomment to use the block recipe. See cookbooks/block/readme.md for documentation.
+# require_recipe "ban"
+
+# uncomment to use the sidekiq recipe. See cookbooks/sidekiq/readme.md for documentation.
+# require_recipe "sidekiq"
+
 #uncomment to turn on memcached
  require_recipe "memcached"
 
@@ -113,7 +119,12 @@ if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # postgresql9_pg_trgm "dbname"
   # postgresql9_pgcrypto "dbname"
   # postgresql9_pgrowlocks "dbname"
-   postgresql9_postgis "gimmiesportsweb" 
+
+  # PostGis 1.5 (use with versions 9.0, 9.1, 9.2)
+   postgresql9_postgis "gimmiesportsweb"
+
+  # PostGis 2.0 (use with version 9.2)
+  # postgresql9_postgis2 "dbname"
   # postgresql9_seg "dbname"
   # postgresql9_sslinfo "dbname"
   # postgresql9_tablefunc "dbname"
@@ -133,7 +144,7 @@ if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # postgresql9_pg_buffercache "postgres"
   # postgresql9_pg_freespacemap "postgres"
   # postgresql9_pg_stat_statements "todo" - Not done
- 
+
 end
 
 # uncomment to turn on thinking sphinx/ultra sphinx. Remember to edit cookbooks/sphinx/recipes/default.rb first!
